@@ -21,9 +21,8 @@ jobs:
       - name: Create tar.gz archive
         run: |
          cd EC2/
-         mkdir ../snapshot
-         cp -r . ../snapshot/
-         tar -czvf first.tar.gz -C ../snapshot .
+         tar --warning=no-file-changed -czvf first.tar.gz .
+
           
       - name: AWS credentials
         uses: aws-actions/configure-aws-credentials@v3
@@ -33,5 +32,6 @@ jobs:
 
       - name: Upload to S3
         run: |
+          cd /EC2
           aws s3 cp first.tar.gz s3://$AWS_S3_BUCKET/
         
