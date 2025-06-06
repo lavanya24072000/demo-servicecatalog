@@ -21,7 +21,7 @@ jobs:
       - name: Create tar.gz archive
         run: |
           cd ${{ github.event.inputs.folder }}
-          tar -czvf first.tar.gz EC2/
+          tar -czvf first.tar.gz /EC2/
           
       - name: AWS credentials
         uses: aws-actions/configure-aws-credentials@v3
