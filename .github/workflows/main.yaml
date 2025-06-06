@@ -21,7 +21,8 @@ jobs:
       - name: Create tar.gz archive
         run: |
          cd EC2/
-         tar --warning=no-file-changed -czvf first.tar.gz .
+         tar --ignore-failed-read -czvf first.tar.gz .
+
 
           
       - name: AWS credentials
