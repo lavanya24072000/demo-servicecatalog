@@ -23,7 +23,6 @@ jobs:
          cd EC2/
          tar --ignore-failed-read -czvf first.tar.gz .
 
-
           
       - name: AWS credentials
         uses: aws-actions/configure-aws-credentials@v3
@@ -33,6 +32,6 @@ jobs:
 
       - name: Upload to S3
         run: |
-          cd /EC2
+          cd EC2/
           aws s3 cp first.tar.gz s3://$AWS_S3_BUCKET/
         
