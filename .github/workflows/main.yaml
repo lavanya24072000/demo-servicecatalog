@@ -3,7 +3,6 @@ name: Upload Terraform Config to S3
 
 on:
   push:
-
   
 permissions:
    contents: write
