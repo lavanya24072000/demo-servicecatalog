@@ -20,7 +20,7 @@ jobs:
 
       - name: Create tar.gz archive
         run: |
-          cd ${{ github.event.inputs.folder }}
+      
           tar -czvf first.tar.gz /EC2/
           
       - name: AWS credentials
